@@ -6,7 +6,7 @@
 
         <meta charset="utf-8" />
     
-        <title>TecBlog - O seu blog de Tecnologia</title>
+        <title>TecBlog - Apps</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 
     </head>
@@ -27,18 +27,9 @@
 
             <div id="area_principal">
                 <div id="postagem">
-                    <h2>Título da Postagem </h2>
-                    <span class="data-postagem">postado em 11 de Dezembro de 2018</span>
-                    <img class="img-postagem" src="img/imagem1.png">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim nisi fringilla orci porta placerat. Donec varius pulvinar lorem tempus finibus. Fusce commodo augue ut dictum semper. Phasellus scelerisque et felis sit amet accumsan. Cras eu mi ante. Duis fringilla efficitur lectus non venenatis. Praesent vitae justo lorem. Donec bibendum, tellus a fermentum eleifend, enim orci convallis lectus, quis lobortis ipsum nunc et felis. Quisque rhoncus efficitur lectus id ullamcorper. Nunc a lectus sapien.</p>
-
-                    <span class="postado">Postado por Rafael</span>
-                </div>
-
-                 <div id="postagem">
-                    <h2>Título da Postagem </h2>
-                    <span class="data-postagem">postado em 12 de Dezembro de 2018</span>
-                    <img class="img-postagem" src="img/imagem2.png">
+                    <h2>Título da Postagem(APPs) </h2>
+                    <span class="data-postagem">postado em 15 de Dezembro de 2018</span>
+                    <img class="img-postagem" src="img/imagem4.png">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim nisi fringilla orci porta placerat. Donec varius pulvinar lorem tempus finibus. Fusce commodo augue ut dictum semper. Phasellus scelerisque et felis sit amet accumsan. Cras eu mi ante. Duis fringilla efficitur lectus non venenatis. Praesent vitae justo lorem. Donec bibendum, tellus a fermentum eleifend, enim orci convallis lectus, quis lobortis ipsum nunc et felis. Quisque rhoncus efficitur lectus id ullamcorper. Nunc a lectus sapien.</p>
 
                     <span class="postado">Postado por Rafael</span>
