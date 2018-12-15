@@ -32,3 +32,81 @@
     height: 300px;
     background: linear-gradient(to right, red, yellow);
 }
+
+/*SOMBRASSSSSS*/
+
+#boxSombra{
+
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 8px;
+    background: #009670;
+    box-shadow: 10px 10px 2px 20px black;
+    /*todas as propriedades do text-shadow 
+    tmb são aplicadas aqui*/
+    /*4º valor é o espalhamento, spread*/
+    /*É possível colocar mais de uma sombra*/
+
+}
+
+#boxSombra h1{
+
+    color: white;
+    font-size: 60px;
+    /*text-shadow: 5px 10px 10px black; Aplica o borrão
+    /*text-shadow: 20px 20px rgba(0,0,0,0.5); Aplica opacidade*/
+    text-shadow: 4px 4px black;
+    /*1º valor movimenta pra direita ou esquerda*/
+    /*2º movimenta pra cima ou baixo*/
+    /*3º define o borrado(blour)*/
+    /*Referencias do text-shadow W3eSchool*/
+}
+
+/*ANIMAÇÕESSSSSSSS*/
+
+/*palavra reservada*/
+@keyframes animacao_box{
+
+    from{background: red; 
+        border-radius: 0px;
+        top: 0;
+        left: 0}
+
+    to{background: blue; 
+        border-radius: 300px; 
+        top:200px; 
+        left: 200px}
+
+}
+
+
+#box_animacao{
+
+    background: red;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    animation-name: animacao_box;
+    animation-duration: 5s;
+    animation-delay: 3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+
+}
+
+/*TRANSIÇÕESSSS*/
+
+#box_transicao{
+
+    width: 300px;
+    height: 300px;
+    background: orange;
+}
+
+#box_transicao:hover{
+    width: 400px;
+    background: black;
+   /*transition: background 3s, width 8s;*/
+    transition: all 2s;
+}
