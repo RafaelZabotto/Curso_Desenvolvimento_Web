@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Arrays Básicos e Multidimensionais</title>
+
+        <script type="text/javascript">
+
+            /*Pode-se declarar um array de duas formas*/
+            var lista_frutas = Array('banana','maçã','morango','uva');
+            
+            /*Ou*/
+            lista_frutas
+            lista_frutas[1] = "Banana";
+            lista_frutas[2] = "Maçã";
+            lista_frutas[3] = "Morango";
+            lista_frutas[4] = "Uva";
+
+            document.write(lista_frutas[4]);
+
+            /*JS é case sensitive, então Array é declarado com a 'A' maiúsculo*/
+            
+            document.write('<br/><br/>');
+
+            /*Array Multidimensionais*/
+
+            var lista_coisas = Array();
+
+            lista_coisas['frutas'] = Array();
+            lista_coisas['pessoas'] = Array();
+
+            lista_coisas['frutas'][1] = 'Banana';
+            lista_coisas['frutas'][2] = 'Maçã';
+            lista_coisas['frutas'][3] = 'Morango';
+
+            lista_coisas['pessoas'][1] = 'João';
+            lista_coisas['pessoas'][2] = 'José';
+            lista_coisas['pessoas'][3] = 'Maria';
+
+            document.write(lista_coisas['frutas'][2]);
+            document.write(lista_coisas['pessoas'][1]);
+
+        </script>
+
+    </head>
+
+    <body>
+        
+    </body>
+
+</html>
