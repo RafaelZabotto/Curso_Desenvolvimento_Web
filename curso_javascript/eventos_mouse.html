@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Eventos do Mouse</title>
+
+        <script type="text/javascript">
+            //onclick espera um click normal
+            //ondblclick espera um double click
+            //onmousedown executado quando solta o botão do mouse
+            //onmouseover dispara quando entra no elemento
+            //onmouseout dispara quando sai do elemento
+
+            function msgBoasVindas(){
+                alert('Vc pressionou o mouse sobre esse elemento');
+            }
+            //Podem ser associados a várias tags html
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <div onclick="msgBoasVindas()" style ="background: #FFF; height: 150px; width: 150px; border: 1px solid #000"></div><br>
+        <div ondblclick="msgBoasVindas()" style ="background: #000; height: 150px; width: 150px"></div><br>
+        <div onmousedown="msgBoasVindas()" style ="background: #0000ff; height: 150px; width: 150px"></div><br>
+        <div onmouseover="msgBoasVindas()" style ="background: #ff0000; height: 150px; width: 150px"></div><br>
+        <div onmouseout="msgBoasVindas()" style ="background: #00ff00; height: 150px; width: 150px"></div>
+        
+    </body>
+
+</html>
