@@ -1,3 +1,5 @@
+var timeId = null;
+
 function iniciaJogo(){
 
     var url = window.location.search;
@@ -26,15 +28,42 @@ function iniciaJogo(){
     document.getElementById("cronometro").innerHTML = tempo_segundos;
 
     //quantidade de balões
-    var qtde_baloes = 10;
+    var qtde_baloes = 20;
 
     cria_baloes(qtde_baloes);
 
     //imprimir qtde baloes inteiros
 
-    document.getElementById("baloes_inteiros").innerHTML(qtde_baloes);
+    document.getElementById("baloes_inteiros").innerHTML = qtde_baloes;
     document.getElementById("baloes_estourados").innerHTML = 0;
+
+    contagem_tempo(tempo_segundos + 1);
 }
+
+function contagem_tempo(segundos){
+
+    segundos = segundos-1;
+
+    if(segundos == -1){
+
+        clearTimeout(timeId);
+        game_over();
+
+        return false;
+    }
+
+    document.getElementById('cronometro').innerHTML=segundos;
+
+    //função do JQuery aonde passa a função e o tempo em milisegndos que ela precisa ser lançada
+    timeId = setTimeout("contagem_tempo("+segundos+")",1000);
+
+}
+
+function game_over(){
+
+    alert("Fim de jogo, você não conseguiu estourar todos os balões a tempo");
+}
+
 
 function cria_baloes(qtde_baloes){
 
@@ -43,7 +72,16 @@ function cria_baloes(qtde_baloes){
             var balao = document.createElement("img");
             balao.src = "imagens/balao_azul_pequeno.png";
             balao.style.margin = '10px';
+            balao.id = 'b'+i;
+            balao.onclick = function(){estourar(this);};
         
             document.getElementById('cenario').appendChild(balao);
         }
+}
+
+function estourar(e){
+
+    var id_balao = e.id;
+    document.getElementById(id_balao).src = "imagens/balao_azul_pequeno_estourado.png"
+
 }
