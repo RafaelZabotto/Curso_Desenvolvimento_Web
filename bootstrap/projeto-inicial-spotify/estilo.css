@@ -10,6 +10,7 @@ body{
                 linear-gradient(50deg,#ff4169,#7c26fb);
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
 }
 
 /*--Barra de navegação--*/
@@ -105,6 +106,22 @@ nav.navbar-transparente{
     padding: 10px 0px 10px 0px;
 }
 
+/*--REsursos--*/
+#recursos{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+
+}
+
+.rotacionar{
+    transform: rotate(30deg);
+    padding-left: 80px;
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    
+}
+
 /*=================Tipografia====================*/
 
 h1{
@@ -128,4 +145,8 @@ h3{
 
 #servicos h2, #servicos h3{
     color: #7c25f8;
+}
+
+#recursos h3{
+    color: #9bf0e1;
 }
