@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>JQuery Eventos-formulario</title>
+
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                
+                //focus - dispara quando recebe foco
+                //blur - dispara quando perde foco
+                //change - dispara quando é modificado, utilizado com o elemento select
+                //substitua o click abaixo por qualquer nome acima para ver qual evento será disparado
+
+                $('#campo1').click(function(){
+                    alert('Elemento foi pressionado');
+                });
+            });
+
+        </script>
+
+    </head>
+
+        <body>
+
+           <input classe="campo1" type="text"><br>
+
+           <select class="campo1">
+               <option value="1">Primeira opção</option>
+               <option value="2">Segunda opção</option>
+           </select>
+            
+        </body>
+
+</html>

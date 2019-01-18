@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>JQuery Eventos-teclado</title>
+
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                
+                //keydown - qualquer tecla disparao evento
+                //keypress - teclas especiais não disparam o evento
+                //keyup - dispara o evento quando o botão deixa de ser pressionado
+                //substitua o click abaixo por qualquer nome acima para ver qual evento será disparado
+
+                $('#campo1').click(function(){
+                    alert('Elemento foi pressionado');
+                });
+            });
+
+        </script>
+
+    </head>
+
+        <body>
+           <input id="campo1" type="text">
+            
+        </body>
+
+</html>
