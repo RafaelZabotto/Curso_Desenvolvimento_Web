@@ -1,11 +1,13 @@
 <?php
 
+	session_start();
+
 	require_once('db_connection.php');
 
 	$usuario = $_POST['usuario'];
 	$senha = $_POST['senha'];
 
-	$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
+	$sql = "SELECT usuario, email FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
 
 	$objDB = new db();
 	$consulta = $objDB->conecta_mysql();
@@ -16,10 +18,14 @@
 	if($resultado_id){
 		$dados_usuario = mysqli_fetch_array($resultado_id);
 
+		//essa valida o usuário
 		if(isset($dados_usuario['usuario'])){
-			echo "Usuário existe";
-		}else{
 
+			$_SESSION['usuario'] = $dados_usuario['usuario'];
+			$_SESSION['email'] = $dados_usuario['email'];
+
+			header('Location: home.php');
+		}else{
 			header('Location: index.php?erro=1');
 		}
 	}else{
