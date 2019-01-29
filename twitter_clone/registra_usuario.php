@@ -10,6 +10,9 @@ require_once('db_connection.php');
 	$objDB = new db();
 	$link = $objDB->conecta_mysql();
 
+	$usuario_existe = false;
+	$email_existe = false;
+
 	//verificar se o usuário já existe
 
 	$sql = "Select * from usuarios where usuario = '$usuario'";
@@ -19,12 +22,9 @@ require_once('db_connection.php');
 			$dados_usuarios = (mysqli_fetch_array($resultado_id));
 
 			if(isset($dados_usuarios['usuario'])){
-
-				echo "Usuário já cadastrado";
-			}else{
-				echo "Usuário não cadastrado, pode cadastrá-lo";
+				$usuario_existe = true;
+				
 			}
-
 		}else{
 			echo "Erro ao tentar localizar o registro de usuário";
 		}
@@ -38,15 +38,29 @@ require_once('db_connection.php');
 			$dados_email = (mysqli_fetch_array($resultado_id));
 
 			if(isset($dados_email['email'])){
-
-				echo "E-mail já cadastrado";
-			}else{
-				echo "E-mail não cadastrado, pode cadastrá-lo";
+				$email_existe = true;
+			
 			}
 
 		}else{
 			echo "Erro ao tentar localizar o registro de email";
 		}
+
+	if($usuario_existe || $email_existe){
+
+		$retorno_get = "";
+
+		if($usuario_existe){
+			$retorno_get.= "erro_usuario=1&";
+		}
+
+		if($email_existe){
+			$retorno_get.= "erro_email=1&";
+		}
+		header("Location: inscrevase.php?".$retorno_get);
+	}
+
+	die();
 
 	//sempre aspas simples na clausula dos valores
 	$sql = "INSERT INTO usuarios(usuario,email,senha) VALUES('$usuario','$email','$senha')";
