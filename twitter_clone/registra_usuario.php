@@ -31,7 +31,7 @@ require_once('db_connection.php');
 
 	//verificar se o email já existe
 
-	$sql = "Select * from email where usuario = '$email'";
+	$sql = "Select * from usuarios where email = '$email'";
 
 		if($resultado_id = mysqli_query($link,$sql)){
 

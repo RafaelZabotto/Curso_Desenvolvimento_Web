@@ -10,7 +10,7 @@
         private $usuario = 'root';
 
         //senha
-        private $senha = '';
+        private $senha = 'p4ssword';
 
         //banco de dados
         private $database = 'twitter_clone';
