@@ -7,7 +7,7 @@
 	$usuario = $_POST['usuario'];
 	$senha = md5($_POST['senha']);
 
-	$sql = "SELECT usuario, email FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
+	$sql = "SELECT id, usuario, email FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
 
 	$objDB = new db();
 	$consulta = $objDB->conecta_mysql();
@@ -21,6 +21,8 @@
 		//essa valida o usuário
 		if(isset($dados_usuario['usuario'])){
 
+			//a recuperação do ID irá servir para a passagem da msg de tweet
+			$_SESSION['id_usuario'] = $dados_usuario['id'];
 			$_SESSION['usuario'] = $dados_usuario['usuario'];
 			$_SESSION['email'] = $dados_usuario['email'];
 

@@ -36,12 +36,28 @@
 								//data: { texto_tweet: $('#texto_tweet').val() }, //passando um json formato chave1: valor1, chave2: valor2
 								data: $('#form_tweet').serialize(),
 								success: function(data){
-									alert(data);
+									$('#texto_tweet').val('');
+									alert("Tweet incluído com sucesso!");
 								}
 							});
 						}
 
 					});
+
+					//Atualiza a div de tweets
+					function atualizaTweets(){
+						//carrega os tweets
+
+						$.ajax({
+							url: 'get_tweet.php',
+							success: function(data){
+								$('#tweet').html(data);
+								alert(data);
+							}
+						});
+					}
+
+					atualizaTweets();
 				});
 
 		</script>
@@ -98,6 +114,11 @@
 									<button class="btn btn-button" id="btn_tweet" type="button">Tweet</button>
 								</span>
 							</form>
+						</div>
+
+						<div id="tweets" class="list-group">
+						
+						
 						</div>
 					</div>
 			</div>
