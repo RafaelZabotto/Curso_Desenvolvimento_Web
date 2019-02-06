@@ -58,7 +58,7 @@ require_once('db_connection.php');
 			$retorno_get.= "erro_email=1&";
 		}
 		header("Location: inscrevase.php?".$retorno_get);
-		die();
+		
 	}
 
 	//sempre aspas simples na clausula dos valores
