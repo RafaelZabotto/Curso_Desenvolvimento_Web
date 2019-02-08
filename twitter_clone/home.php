@@ -37,7 +37,7 @@
 								data: $('#form_tweet').serialize(),
 								success: function(data){
 									$('#texto_tweet').val('');
-									alert("Tweet incluído com sucesso!");
+									atualizaTweets();
 								}
 							});
 						}
@@ -51,8 +51,8 @@
 						$.ajax({
 							url: 'get_tweet.php',
 							success: function(data){
-								$('#tweet').html(data);
-								alert(data);
+								$('#tweets').html(data);
+
 							}
 						});
 					}
