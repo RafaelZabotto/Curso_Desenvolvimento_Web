@@ -26,38 +26,23 @@
 				$(document).ready(function(){
 
 					//associar ao elemento de click
-					$('#btn_tweet').click(function(){
+					$('#btn_procurar_pessoa').click(function(){
 
-						if($('#texto_tweet').val().length > 0){
+						if($('#nome_pessoa').val().length > 0){
 
 							$.ajax({
-								url: 'inclui_tweet.php',
+								url: 'get_pessoa.php',
 								method: 'post',
-								//data: { texto_tweet: $('#texto_tweet').val() }, //passando um json formato chave1: valor1, chave2: valor2
-								data: $('#form_tweet').serialize(),
+								//data: { nome_pessoa: $('#nome_pessoa').val() }, //passando um json formato chave1: valor1, chave2: valor2
+								data: $('#form_procurar_pessoas').serialize(),
 								success: function(data){
-									$('#texto_tweet').val('');
-									atualizaTweets();
+									$('#pessoas').html(data);
 								}
 							});
 						}
 
 					});
 
-					//Atualiza a div de tweets
-					function atualizaTweets(){
-						//carrega os tweets
-
-						$.ajax({
-							url: 'get_tweet.php',
-							success: function(data){
-								$('#tweets').html(data);
-
-							}
-						});
-					}
-
-					atualizaTweets();
 				});
 
 		</script>
@@ -80,7 +65,8 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="sair.php">Sair</a></li>
+	            <li><a href="home.php">Home</a></li>
+                <li><a href="sair.php">Sair</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -108,15 +94,15 @@
 	    	<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<form id="form_tweet" class="input-group">
-								<input type="text" id="texto_tweet" name="texto_tweet" class="form-control" placeholder="O que está acontecendo agora?" maxlength="140">
+							<form id="form_procurar_pessoas" class="input-group">
+								<input type="text" id="nome_pessoa" name="nome_pessoa" class="form-control" placeholder="Quem você esta procurando?" maxlength="140">
 								<span class="input-group-btn">
-									<button class="btn btn-button" id="btn_tweet" type="button">Tweet</button>
+									<button class="btn btn-button" id="btn_procurar_pessoa" type="button">Procurar</button>
 								</span>
 							</form>
 						</div>
 
-						<div id="tweets" class="list-group">
+						<div id="pessoas" class="list-group">
 						
 						
 						</div>
@@ -125,7 +111,6 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4><a href="procurar_pessoas.php">Procurar por Pessoas</a></h4>
 					</div>
 				</div>
 			</div>
