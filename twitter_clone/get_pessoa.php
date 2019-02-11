@@ -25,6 +25,11 @@
 
             echo '<a href="#" class="list-group-item">';
                 echo '<strong>'.$registro['usuarios'].'</strong><small> - '.$registro['email'].' </small>';   
+                echo '<p class="list-group-item-text pull-right">';
+                    //botão para sergir pessoas
+                    echo '<button type="button" class="btn btn-default btn_seguir" data-id_usuario="'.$registro['id'].'">Seguir</button>';
+                    echo '<div class="clearfix"></div>';
+                echo '</p>';
             echo '</a>';
         }
 
